@@ -96,10 +96,16 @@ public class Main{
 
           //
           //
+
           System.out.println("\nA matriz inversa é: ");
           for (int i=0; i<tamanho; ++i) {
                   for (int j=0; j<tamanho; ++j) {
-                          System.out.print(matrizInversa[i][j]+"  ");
+                          if(matrizInversa[i][j] < 0){
+                            matrizInversa[i][j] += 256;
+                            System.out.print(matrizInversa[i][j]+" ");
+                          }else{
+                            System.out.print(matrizInversa[i][j]+" ");
+                          }
                   }
                   System.out.println();
           }
@@ -119,7 +125,7 @@ public class Main{
           System.out.println("\nEntre com a matriz inversa: ");
           for(int i = 0; i < tamanhoInversa; i++) {
                   for(int j = 0; j < tamanhoInversa; j++) {
-                          chaveInversa[i][j] = leitor.nextInt();
+                          chaveInversa[i][j] = leitor.nextDouble();
                   }
           }
 
@@ -144,7 +150,7 @@ public class Main{
           break;
 
         case 3:
-          System.out.printf("\nProgama Finalizado!\n");
+          System.out.printf("\nPrograma Finalizado!\n");
           break;
 
         default:
